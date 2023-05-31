@@ -1,6 +1,7 @@
 import { Perfil } from 'components/Perfil/Perfil';
 import {Statistics} from './Statistics/Statistics';
 import { FriendList } from './FriendList/FriendList';
+import { TransactionHistory } from './TransactionHistory/TransactionHistory';
 
 
 const styleTest = {
@@ -19,10 +20,13 @@ export const App = ({data}) => {
         <Perfil user={data} />
       </div>
       <div>
-        <Statistics user={data}/>
+        <Statistics user/>
       </div>
       <div>
-        <FriendList user={data}/>
+        <FriendList user/>
+      </div>
+      <div>
+        <TransactionHistory user/>
       </div>
     </>
   );
