@@ -17,16 +17,16 @@ export const App = ({data}) => {
   return (
     <>
       <div style={styleTest}>
-        <Perfil user={data} />
+        <Perfil user={data[0]} />
       </div>
       <div>
-        <Statistics user/>
+        <Statistics user={data[3]}/>
       </div>
       <div>
-        <FriendList user/>
+        <FriendList user={data[2]}/>
       </div>
       <div>
-        <TransactionHistory user/>
+        <TransactionHistory user={data[1]}/>
       </div>
     </>
   );

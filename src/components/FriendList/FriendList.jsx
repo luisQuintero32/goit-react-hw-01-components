@@ -1,12 +1,13 @@
 import React from "react";
 import Style from "./FriendList.module.css";
-import data from "../../data/friends.json";
+// import user from "../../data/friends.json";
 
-export const FriendList = () => {
+
+export const FriendList = ({user}) => {
   return (
     <ul className={Style.friendList}>
-      {data.map((item) => (
-        <li className={Style.item} key={item.id}>
+      {user.map((item) => (
+        <li className={Style.item} key={user.id}>
           <span
             className={`${Style.status} ${
               item.isOnline
@@ -16,10 +17,10 @@ export const FriendList = () => {
           />
           <img
             className={Style.avatar}
-            src={item.avatar}
-            alt={item.name}
+            src={user.avatar}
+            alt={user.name}
           />
-          <p className={Style.name}>{item.name}</p>
+          <p className={Style.name}>{user.name}</p>
         </li>
       ))}
     </ul>
