@@ -1,16 +1,17 @@
 import React from "react";
 import Style from "./FriendList.module.css";
-// import user from "../../data/friends.json";
+// import data from "../../data/friends.json";
+import PropTypes from 'prop-types';
 
 
 export const FriendList = ({user}) => {
   return (
     <ul className={Style.friendList}>
-      {user.map((item) => (
+      {user.map((user) => (
         <li className={Style.item} key={user.id}>
           <span
             className={`${Style.status} ${
-              item.isOnline
+              user.isOnline
                 ? Style["status--active"]
                 : Style["status--inactive"]
             }`}
@@ -25,4 +26,11 @@ export const FriendList = ({user}) => {
       ))}
     </ul>
   );
+};
+
+FriendList.prototype ={
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  isOnline: PropTypes.bool.isRequired,
+  id : PropTypes.number.isRequired,
 };

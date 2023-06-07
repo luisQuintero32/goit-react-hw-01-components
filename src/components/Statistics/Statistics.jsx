@@ -2,24 +2,24 @@ import PropTypes from 'prop-types';
 import Style from './Statistics.module.css';
 import React from 'react';
 import getRandomColor from "../ColorRandom/ColorRandom";
-import data from '../../data/data.json';
+// import data from '../../data/data.json';
 
-export const Statistics = () =>{
+export const Statistics = ({user}) =>{
     return(
     <section className={Style.statistics}>
         <div className={Style.divTitle}>
         <h2 className={Style.title}>UPLOAD STATS</h2>
         </div>
         <ul className={Style.styleList}>
-            {data.map((item) => {
+            {user.map((user) => {
                 const styleColor = {
                 background: getRandomColor(), // Llama a la función getRandomColor para obtener un color aleatorio
                 };
 
                 return (
-                <li style={styleColor} className={Style.item} key={item.id}>
-                    <span className={Style.label}>{item.label}</span>
-                    <span className={Style.percentage}>{item.percentage}%</span>
+                <li style={styleColor} className={Style.item} key={user.id}>
+                    <span className={Style.label}>{user.label}</span>
+                    <span className={Style.percentage}>{user.percentage}%</span>
                 </li>
                 );
             })}

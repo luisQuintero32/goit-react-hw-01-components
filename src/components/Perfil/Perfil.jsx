@@ -1,5 +1,6 @@
+import React from "react";
 import PropTypes from 'prop-types';
-import style from './Perfil.module.css'
+import style from './Perfil.module.css';
 
 export const Perfil = ({user}) =>{
   return(
