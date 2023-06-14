@@ -1,34 +1,34 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import style from './Perfil.module.css';
+import style from './Profile.module.css';
 
-export const Perfil = ({user}) =>{
+export const Profile = ({ username, tag, location, avatar, stats}) =>{
   return(
   <div className={style.container}> 
     <div className={style.profile}>
       <div className={style.description}>
         <img
-          src={user.avatar}
-          alt={user.tag}
+          src={avatar}
+          alt={tag}
           className={style.avatar}
         />
-        <p className={style.name}>{user.username}</p>
-        <p className={style.tag}>@{user.tag}</p>
-        <p className={style.location}>{user.location}</p>
+        <p className={style.name}>{username}</p>
+        <p className={style.tag}>@{tag}</p>
+        <p className={style.location}>{location}</p>
       </div>
 
       <ul className={style.stats}>
         <li className={style.stats_item}>
           <span className={style.label}>Followers</span>
-          <span className={style.quantity}>{user.stats.followers}</span>
+          <span className={style.quantity}>{stats.followers}</span>
         </li>
         <li className={style.stats_item}>
           <span className={style.label}>Views</span>
-          <span className={style.quantity}>{user.stats.views}</span>
+          <span className={style.quantity}>{stats.views}</span>
         </li>
         <li className={style.stats_item}>
           <span className={style.label}>Likes</span>
-          <span className={style.quantity}>{user.stats.likes}</span>
+          <span className={style.quantity}>{stats.likes}</span>
         </li>
       </ul>
     </div>
@@ -37,7 +37,7 @@ export const Perfil = ({user}) =>{
 }
 
 
-Perfil.propTypes = {
+Profile.propTypes = {
   username: PropTypes.string.isRequired,
   tag:PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,

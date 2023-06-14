@@ -1,4 +1,4 @@
-import { Perfil } from 'components/Perfil/Perfil';
+import { Profile } from 'components/Profile/Profile';
 import {Statistics} from './Statistics/Statistics';
 import { FriendList } from './FriendList/FriendList';
 import { TransactionHistory } from './TransactionHistory/TransactionHistory';
@@ -13,20 +13,27 @@ const styleTest = {
   color: '#010101'
 }
 
-export const App = ({data}) => {
+export const App = ({user, statistics, friends, transactions}) => {
   return (
     <>
       <div style={styleTest}>
-        <Perfil user={data[0]} />
+        <Profile
+        username={user.username}
+        tag={user.tag}
+        location={user.location}
+        avatar={user.avatar}
+        stats={user.stats}
+        />
       </div>
       <div>
-        <Statistics user={data[3]}/>
+        <Statistics title="UPLOAD STATS" 
+        statistics={statistics} />
       </div>
       <div>
-        <FriendList user={data[2]}/>
+      <FriendList friends={friends} />
       </div>
       <div>
-        <TransactionHistory user={data[1]}/>
+      <TransactionHistory transactions={transactions} />
       </div>
     </>
   );
